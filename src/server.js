@@ -1,8 +1,10 @@
 import express from 'express'
 import configViewEngine from './configs/viewEngine'
 
+require('dotenv').config() // sử dụng để cấu hình file môi trường
+
 const app = express()
-const port = 3000
+const port = process.env.PORT || 3000;
 
 configViewEngine(app);
 
