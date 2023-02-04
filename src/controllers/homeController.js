@@ -12,7 +12,15 @@ let getDetailsPage = async (req, res) => {
   return res.json(user)
 }
 
+let createNewUser = async (req, res) => {
+  // logic
+  let {firstName, lastName, email, address} = req.body;
+  await pool.execute('INSERT INTO `users` (firstName, lastName, email, address) VALUES (?, ?, ?, ?)', [firstName, lastName, email, address]);
+  return res.redirect('/');
+}
+
 export default {
     getHomepage,
-    getDetailsPage
+    getDetailsPage,
+    createNewUser
 };
