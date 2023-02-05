@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title> 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <form action="/update-user" method="POST" style="text-align: center;">
+        <h2>Edit User:</h2>
+        <div>
+          <div>
+            <div>
+              <label for="firstName">First Name: </label>
+            </div>
+            <input type="text" placeholder="Enter..." id="firstName" name="firstName" value="<%= dataUser.firstName %>" />
+          </div>
+
+          <div>
+            <div>
+              <label for="lastName">Last Name: </label>
+            </div>
+            <input type="text" placeholder="Enter..." id="lastName" name="lastName" value="<%= dataUser.lastName %>" />
+          </div>
+
+          <div>
+            <div>
+              <label for="email">Email: </label>
+            </div>
+            <input type="email" placeholder="Enter..." id="email" name="email" value="<%= dataUser.email %>" />
+          </div>
+
+          <div>
+            <div>
+              <label for="address">Address: </label>
+            </div>
+            <input type="text" placeholder="Enter..." id="address" name="address" value="<%= dataUser.address %>" />
+          </div>
+          <input type="text" value="<%= dataUser.id %>" hidden name="userId" />
+          <div style="margin-top: 12px;">
+            <button class="btn-submit">Save</button>
+          </div>
+      </form>
+</body>
+</html>
