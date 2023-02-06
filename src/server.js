@@ -1,8 +1,7 @@
 import express from 'express'
 import configViewEngine from './configs/viewEngine'
 import initWebRoute from './route/web';
-
-// import connection from './configs/connectDB';
+import initAPIRoute from './route/api';
 
 require('dotenv').config() // sử dụng để cấu hình file môi trường
 
@@ -16,8 +15,11 @@ app.use(express.json())
 // setup view engine
 configViewEngine(app);
 
-// init
+// init WEB Route
 initWebRoute(app);
+
+// init API Route
+initAPIRoute(app);
 
 app.listen(port, () => {
   console.log(`Example app listening on port http://localhost:${port}`)
